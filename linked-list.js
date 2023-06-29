@@ -2,6 +2,7 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
+
   append(value) {
     const newNode = new Node(value);
     if (this.head === null) {
@@ -14,19 +15,26 @@ class LinkedList {
       nextNode.nextNode = newNode;
     }
   }
+
+  prepend(value) {
+    if (this.head === null) {
+      const newNode = new Node(value);
+      this.head = newNode;
+    } else {
+      const newNode = new Node(value, this.head);
+      this.head = newNode;
+    }
+  }
 }
 
 class Node {
-  constructor(value) {
+  constructor(value = null, nextNode = null) {
     this.value = value;
-    this.nextNode = null;
+    this.nextNode = nextNode;
   }
 }
 
 const newList = new LinkedList();
-newList.append(3);
-newList.append(4);
-newList.append(5);
-
-
-console.log(newList.head.nextNode.nextNode.nextNode);
+newList.append(6)
+newList.append(8);
+console.log(newList);
