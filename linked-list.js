@@ -127,10 +127,3 @@ class Node {
     this.nextNode = nextNode;
   }
 }
-
-const newList = new LinkedList();
-newList.append(6)
-newList.append(7);
-newList.append(8);
-newList.append(9);
-console.log(newList.toString());
