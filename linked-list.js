@@ -25,6 +25,23 @@ class LinkedList {
       this.head = newNode;
     }
   }
+
+  get size() {
+    return this.calcSize();
+  }
+
+  calcSize() {
+    let counter = 1;
+    if (this.head === null) return 0;
+    else {
+      let node = this.head;
+      while(node.nextNode) {
+        counter += 1;
+        node = node.nextNode;
+      }
+      return counter;
+    }
+  }
 }
 
 class Node {
@@ -37,4 +54,6 @@ class Node {
 const newList = new LinkedList();
 newList.append(6)
 newList.append(8);
-console.log(newList);
+newList.append(8);
+newList.append(8);
+console.log(newList.size);
