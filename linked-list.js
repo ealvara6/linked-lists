@@ -7,7 +7,11 @@ class LinkedList {
     if (this.head === null) {
       this.head = newNode;
     } else {
-      this.head.nextNode = newNode;
+      let nextNode = this.head;
+      while (nextNode.nextNode) {
+        nextNode = nextNode.nextNode;
+      }
+      nextNode.nextNode = newNode;
     }
   }
 }
@@ -25,4 +29,4 @@ newList.append(4);
 newList.append(5);
 
 
-console.log(newList);
+console.log(newList.head.nextNode.nextNode.nextNode);
