@@ -110,14 +110,10 @@ class LinkedList {
     if (this._head === null) return null;
     let node =  this._head;
     for (let i = 0; i < this.calcSize(); i += 1) {
-      if (node.nextNode === null) {
-        linkedListString += `${node.value} -> Null`;
-      } else {
         linkedListString += `${node.value} -> `;
         node = node.nextNode;
-      }
     }
-    return linkedListString;
+    return linkedListString += 'null';
   }
 }
 
